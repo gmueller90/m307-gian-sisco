@@ -13,8 +13,12 @@ app.get("/", async function (req, res) {
   res.render("start", {});
 });
 
-app.get("/reglog", async function (req, res) {
-  res.render("reglog", {});
+app.get("/regsite", async function (req, res) {
+  res.render("regsite", {});
+});
+
+app.get("/login", async function (req, res) {
+  res.render("logsite", {});
 });
 
 app.get("/overview", async function (req, res) {
