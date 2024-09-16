@@ -1,7 +1,22 @@
-<h1>Hallo Welt!</h1>
-
-<p>Willkommen auf meiner Website. Hier wird in Kürze eine interaktive Webapplikation entstehen. Viel Vergnügen!</p>
-
-<img src="construction.gif" width="200">
+<h1>Mood-APP</h1>
+    <h2>Dein Tracker für mentale Gesundheit</h2>
+    <div class="queries">
+        <div class="sections"> 
+            <button onclick="queryskala()">Get skalas</button>
+            <div id="skalas"></div> 
+        </div>
+        <div class="sections">
+            <button onclick="queryimgdate()">Get imgdate</button>
+            <div id="imgdates"></div> 
+        </div>
+        <div class="sections">
+            <button onclick="querycomments()">Get comments</button>
+            <div id="comments"></div> 
+        </div>
+        <div class="sections">
+            <button onclick="countusers()">Number of users</button>
+            <div id="counting"></div> 
+        </div>
+    </div>
 
 {{> contactform}}

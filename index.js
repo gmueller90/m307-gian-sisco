@@ -13,6 +13,14 @@ app.get("/", async function (req, res) {
   res.render("start", {});
 });
 
+app.get("/reglog", async function (req, res) {
+  res.render("reglog", {});
+});
+
+app.get("/overview", async function (req, res) {
+  res.render("overview", {});
+});
+
 app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });
