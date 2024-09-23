@@ -1,11 +1,11 @@
 import { createApp } from "./config.js";
 
 const app = createApp({
-  user: "autumn_star_7622",
-  host: "168.119.168.41",
-  database: "demo",
-  password: "uaioysdfjoysfdf",
-  port: 18324,
+  user: "dawn_haze_3386",
+  host: "bbz.cloud",
+  database: "dawn_haze_3386",
+  password: "b460a2f7191fbf7397b3295c00c8a4f0",
+  port: 30211,
 });
 
 /* Startseite */
@@ -13,12 +13,12 @@ app.get("/", async function (req, res) {
   res.render("start", {});
 });
 
-app.get("/regsite", async function (req, res) {
-  res.render("regsite", {});
+app.get("/register", async function (req, res) {
+  res.render("register", {});
 });
 
 app.get("/login", async function (req, res) {
-  res.render("logsite", {});
+  res.render("login", {});
 });
 
 app.get("/overview", async function (req, res) {
