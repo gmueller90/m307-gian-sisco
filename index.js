@@ -29,6 +29,30 @@ app.get("/impressum", async function (req, res) {
   res.render("impressum", {});
 });
 
+app.get("/post", async function (req, res) {
+  res.render("post", {});
+});
+
+app.get("/newpost", async function (req, res) {
+  res.render("newpost", {});
+});
+
+app.post("/createpost", async function (req, res) {
+  await app.locals.pool.query(
+    "INSERT INTO moodposts (moodtitle, moodtext, moodimg, moodactivity1, moodactivity2, moodactivity3, moodactivity4, moodactivity5) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)",
+    [
+      req.body.moodtitle,
+      req.body.moodtext,
+      req.body.moodimg,
+      req.body.moodactivity1,
+      req.body.moodactivity2,
+      req.body.moodactivity3,
+      req.body.moodactivity4,
+      req.body.moodactivity5,
+    ]
+  );
+  res.redirect("/overview");
+});
 /* Wichtig! Diese Zeilen müssen immer am Schluss der Website stehen! */
 app.listen(3010, () => {
   console.log(`Example app listening at http://localhost:3010`);
