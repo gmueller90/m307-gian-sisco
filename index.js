@@ -39,7 +39,7 @@ app.get("/newpost", async function (req, res) {
 
 app.post("/createpost", async function (req, res) {
   await app.locals.pool.query(
-    "INSERT INTO moodposts (moodtitle, moodtext, moodimg, moodactivity1, moodactivity2, moodactivity3, moodactivity4, moodactivity5) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)",
+    "INSERT INTO moodpost (moodtitle, moodtext, moodimg, moodactivity1, moodactivity2, moodactivity3, moodactivity4, moodactivity5) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)",
     [
       req.body.moodtitle,
       req.body.moodtext,
