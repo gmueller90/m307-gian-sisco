@@ -1,4 +1,13 @@
 <h1>Registrierung</h1>
 
-
-{{> registerform}}
+<form action="/register" method="POST">
+  Dein Name:
+  <input name="name" type="text" /><br />
+  Dein Geburtsdatum:
+  <input name="birthdate" type="date" /><br />
+  Wähle deinen Nutzernamen:
+  <input name="loginname" type="text" /><br />
+  Setze dein Passwort:
+  <input type="password" type="password" /><br />
+  <input type="submit" value="Registrieren" />
+</form>

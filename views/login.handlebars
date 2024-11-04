@@ -1,4 +1,10 @@
 <h1>Logge dich ein</h1>
 
-
-{{> loginform}}
+<form action="/login" method="POST">
+  Nutzername:
+  <input name="loginname" type="text" /><br />
+  Passwort:
+  <input type="password" type="password" /><br />
+  <input type="submit" value="Anmelden" />
+</form>
+<a href="/register" class="button">Registrieren</a>
