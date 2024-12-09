@@ -13,15 +13,19 @@ app.get("/", async function (req, res) {
   res.render("start", {});
 });
 
-app.get("/register", async function (req, res) {
+/* app.get("/register", async function (req, res) {
   res.render("register", {});
 });
 
 app.get("/login", async function (req, res) {
   res.render("login", {});
 });
-
+ */
 app.get("/overview", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
   res.render("overview", {});
 });
 
@@ -30,14 +34,26 @@ app.get("/impressum", async function (req, res) {
 });
 
 app.get("/post", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
   res.render("post", {});
 });
 
 app.get("/newpost", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
   res.render("newpost", {});
 });
 
 app.post("/createpost", async function (req, res) {
+  if (!req.session.userid) {
+    res.redirect("/login");
+    return;
+  }
   await app.locals.pool.query(
     "INSERT INTO moodpost (moodtitle, moodtext, moodimg, moodactivity1, moodactivity2, moodactivity3, moodactivity4, moodactivity5) VALUES ($1,$2,$3,$4,$5,$6,$7,$8)",
     [
