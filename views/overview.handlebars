@@ -1,7 +1,21 @@
-<h1>Alle Posts</h1>
+<h1>The Mood</h1>
 
-<img src="construction.gif" width="200" />
-<p>Hier werden alle Posts aufgelistet</p>
-<p>Hier ein Button, welcher zur Create Post Seite führt</p>
+{{#overview}}
+  <h2>{{title}}</h2>
+  <a href="/singlepost/{{id}}"><img src="/uploads/{{image}}" alt="" /></a>
 
-{{> newpost}}
+  <form action="/comment/{{id}}" method="POST">
+    <input type="text" name="text" />
+    <input type="submit" value="kommentieren" />
+  </form>
+  <ul>
+    {{#comments}}
+      <p>{{date}}</p>
+      <p>{{text}}</p>
+    {{/comments}}
+  </ul>
+{{/overview}}
+
+<form action="/newpost" method="get">
+  <input type="submit" value="Neuen Post erstellen" />
+</form>

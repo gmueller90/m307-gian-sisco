@@ -39,8 +39,8 @@ export function createApp(dbconfig) {
   app.post("/register", function (req, res) {
     var password = bcrypt.hashSync(req.body.password, 10);
     pool.query(
-      "INSERT INTO users (loginname, password) VALUES ($1, $2)",
-      [req.body.loginname, password],
+      "INSERT INTO users (name, birthdate, loginname, password) VALUES ($1, $2, $3, $4)",
+      [req.body.name, req.body.birthdate, req.body.loginname, password],
       (error, result) => {
         if (error) {
           console.log(error);
